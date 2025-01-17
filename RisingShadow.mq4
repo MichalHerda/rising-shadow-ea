@@ -1,6 +1,10 @@
 //**********************************************************************************************************************
 #property strict
 //**********************************************************************************************************************
+input double riskPercent = 2.0; 
+input double rrRatio = 1.5;
+input double minimumSL = 8.0;
+input double stopLossModificator = 2.0;
 input ENUM_TIMEFRAMES timeFrame = PERIOD_M1;
 input int maPeriod = 10;
 ENUM_MA_METHOD maMethod = MODE_SMA;
@@ -43,6 +47,30 @@ bool isBarBelowMovingAverage(ENUM_TIMEFRAMES tf, int period, int barIdx)
       return highPrice <= movAve;
    }
 //**********************************************************************************************************************
+double calculateSL()
+   {    
+    bool isLowestPriceBelowMovAve = true;
+    int barIdx = 1;
+    double stopLoss = 0;
+    
+    while(isLowestPriceBelowMovAve) {
+      double lowPrice = iLow(Symbol(), timeFrame, barIdx);  
+      double movAve = iMA(Symbol(), timeFrame, maPeriod, barIdx, maMethod, maPrice, 0);
+      if(barIdx != 0) {
+         if(lowPrice < stopLoss) {
+            stopLoss = lowPrice;            
+         }
+      }
+      else {
+         stopLoss = lowPrice;    
+      }
+      barIdx++;
+      if(lowPrice > movAve) isLowestPriceBelowMovAve = false;
+    }
+    return stopLoss;
+   }
+
+//**********************************************************************************************************************
 bool isValidSetup(ENUM_TIMEFRAMES tf, int period, int barIdx)
    {
       double open  = iOpen(Symbol(), tf, barIdx);
@@ -63,6 +91,7 @@ bool isValidSetup(ENUM_TIMEFRAMES tf, int period, int barIdx)
 int OnInit()
   {
    //EventSetTimer(60);
+   Print("RisingShadow version 2025.01.17");
    return(INIT_SUCCEEDED);
   }
 //**********************************************************************************************************************
@@ -73,8 +102,23 @@ void OnDeinit(const int reason)
 //**********************************************************************************************************************
 void OnTick()
   {
+   if(isValidSetup(timeFrame, maPeriod, 1)) {
+      Print("SETUP");
+      double stopLoss = calculateSL();
+      stopLoss -= stopLossModificator;
+      if(stopLoss > Bid - minimumSL) {
+         stopLoss = Bid - minimumSL;
+         Print("increase SL to ", stopLoss);
+      }
+      else {
+         Print("SL : ", stopLoss);
+      }
       
+      
+   }
+   else {
    
+   }   
   }
 //**********************************************************************************************************************
 void OnTimer()
