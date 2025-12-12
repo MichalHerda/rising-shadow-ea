@@ -1,0 +1,18 @@
+OŚWIADCZENIE O OGRANICZENIU ODPOWIEDZIALNOŚCI  
+----------------------------------------------
+
+Niniejsze oprogramowanie (Expert Advisor / skrypt / narzędzie) zostało stworzone wyłącznie w celach edukacyjnych i demonstracyjnych. Kod nie stanowi porady inwestycyjnej, finansowej, podatkowej ani jakiejkolwiek rekomendacji dotyczącej handlu na rynkach finansowych.
+
+Autor nie gwarantuje poprawności działania programu, kompletności, aktualności ani przydatności do jakiegokolwiek celu. Każde użycie tego oprogramowania na rachunkach rzeczywistych (LIVE) odbywa się całkowicie na ryzyko użytkownika.
+
+Handel instrumentami finansowymi, w szczególności z wykorzystaniem dźwigni, wiąże się z wysokim ryzykiem utraty kapitału. Użytkownik ponosi pełną odpowiedzialność za wszystkie decyzje handlowe podjęte na podstawie lub przy użyciu tego oprogramowania.
+
+Autor nie ponosi odpowiedzialności za:
+- straty finansowe,
+- błędy działania programu,
+- nieprawidłową konfigurację,
+- skutki wynikające z modyfikacji kodu,
+- wykorzystanie oprogramowania niezgodne z jego przeznaczeniem.
+
+Korzystając z tego oprogramowania, użytkownik akceptuje powyższe warunki i zrzeka się wszelkich roszczeń wobec autora.
+

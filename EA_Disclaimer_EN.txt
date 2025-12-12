@@ -1,0 +1,18 @@
+DISCLAIMER: EDUCATIONAL USE ONLY  
+---------------------------------
+
+This software (Expert Advisor / script / tool) is provided strictly for educational and demonstrational purposes. The code does not constitute financial advice, investment recommendations, tax guidance, or any form of trading signal intended for real-money accounts.
+
+The author makes no guarantees regarding the performance, accuracy, reliability, or suitability of this software for any purpose. Any use of this software on LIVE trading accounts is done entirely at the user’s own risk.
+
+Trading financial instruments — especially leveraged products — involves a high risk of loss. The user assumes full responsibility for all trading decisions made based on or using this software.
+
+The author shall not be held liable for:
+- financial losses,
+- software malfunction or unexpected behavior,
+- incorrect configuration by the user,
+- any results of code modifications,
+- or any use of the software outside its intended educational scope.
+
+By using this software, the user acknowledges and accepts all of the above terms and waives any claims against the author.
+
